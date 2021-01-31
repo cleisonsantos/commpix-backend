@@ -2,10 +2,14 @@ const User = require("../models/User");
 
 module.exports = {
     async store(req, res) {
-        const { name, email, company_name, office, password } = req.body
-        const isAdmin = true
-        const user = await User.create({ name, email, company_name, office, isAdmin, password })
+        try {
+            const { name, email, company, office, password } = req.body
 
-        return res.json(user);
+            const user = await User.create({ name, email, company, office, isAdmin: true, password })
+
+            return res.json(user);
+        } catch (err) {
+            return(console.log(err))
+        }
     }
 }

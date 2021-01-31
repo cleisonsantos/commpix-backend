@@ -3,9 +3,9 @@ const UserController = require('./controllers/UserController')
 
 const routes = express.Router()
 
-routes.get('/users', (req, res) => {
-    return res.json({ hello: "World"})
-})
+// routes.get('/users', (req, res) => {
+//     return res.json({ hello: "World"})
+// })
 
 routes.post('/users', UserController.store)
 
