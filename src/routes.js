@@ -6,4 +6,6 @@ const routes = express.Router()
 routes.get('/users', UserController.index)
 routes.post('/users', UserController.store)
 
+routes.delete('/users/:id', UserController.destroy)
+
 module.exports = routes
